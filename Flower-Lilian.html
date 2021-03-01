@@ -1,0 +1,124 @@
+<HTML CODE--->
+<div class="wrap">
+    <div class="flower">
+      <div class="flower-center"></div>
+      <div class="stem">
+        <div class="petal petal-1"> </div>
+        <div class="petal petal-2"></div>
+        <div class="petal petal-3"></div>
+        <div class="petal petal-4"></div>
+        <div class="petal petal-5"></div>
+        <div class="petal petal-6"></div>
+      </div>
+    </div>
+    <div class="ground"></div>
+    <div class="brightness"></div>
+</div>
+
+<CSS CODE--->
+  <style>
+      .wrap {
+  background: #add8e6;
+  width: 500px;
+  height: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /*Make the flower to be centered exactly in the middle of the screen, that is, both vertically and horizontally centered.
+https://css-tricks.com/quick-css-trick-how-to-center-an-object-exactly-in-the-center 
+*/
+}
+.flower {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  left: 50%;
+  top: 40%;
+}
+.flower-center {
+  width: 50px;
+  height: 50px;
+  background: #ff0;
+  border-radius: 50%;
+  z-index: 1;
+  position: absolute;
+  top: -25px;
+  left: -25px;
+}
+.stem {
+  width: 6px;
+  height: 150px;
+  background: #006400;
+  position: absolute;
+  bottom: -150px;
+  left: -3px;
+}
+.petal {
+  width: 100px;
+  height: 40px;
+  background: #f00;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform-origin: top left;
+}
+.petal-1 {
+  transform: rotate(60deg);
+}
+.petal-2 {
+  transform: rotate(120deg);
+}
+.petal-3 {
+  transform: rotate(180deg);
+}
+.petal-4 {
+  transform: rotate(240deg);
+}
+.petal-5 {
+  transform: rotate(300deg);
+}
+.petal-6 {
+  transform: rotate(360deg);
+}
+.ground {
+  background: #008000;
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+}
+.brightness {
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0);
+  z-index: 99999;
+}
+</style>
+</CSS CODE--->
+
+<JS CODE--->
+<script>
+var petal = document.getElementsByClassName("petal"),
+    B= document.getElementsByClassName("brightness")[0],
+arry=[0.1,0.3,0.5,0.7,0.9,1];
+//set brightness for each click of the petals
+for (var i = 0; i < petal.length; i ++) {
+petal[i].index=i;
+  petal[i].onclick=function(){petal[this.index].style.background="blue";
+for (var k = 0; k< petal.length; k ++){
+  petal[k].style.background="red";
+}
+  petal[this.index].style.background="blue";
+ B.style.background='rgba(255,255,255,'+arry[this.index]+')';  
+  }
+}
+var flowercenter = document.getElementsByClassName("flower-center")[0];
+flowercenter.onclick=function(){
+ for (var O = 0; O< petal.length; O ++){
+ petal[O].style.background="red";
+   B.style.background='#add8e6';  
+   //turn background into original brightness after click on flower-center
+ }
+}
+</script>
