@@ -17,7 +17,7 @@
 
 <CSS CODE--->
   <style>
-      .wrap {
+  .wrap {
   background: #add8e6;
   width: 500px;
   height: 300px;
@@ -39,7 +39,7 @@ https://css-tricks.com/quick-css-trick-how-to-center-an-object-exactly-in-the-ce
 .flower-center {
   width: 50px;
   height: 50px;
-  background: #ff0;
+  background: #662b00;
   border-radius: 50%;
   z-index: 1;
   position: absolute;
@@ -57,7 +57,7 @@ https://css-tricks.com/quick-css-trick-how-to-center-an-object-exactly-in-the-ce
 .petal {
   width: 100px;
   height: 40px;
-  background: #f00;
+  background: #ffc400;
   position: absolute;
   left: 0;
   top: 0;
@@ -107,7 +107,7 @@ for (var i = 0; i < petal.length; i ++) {
 petal[i].index=i;
   petal[i].onclick=function(){petal[this.index].style.background="blue";
 for (var k = 0; k< petal.length; k ++){
-  petal[k].style.background="red";
+  petal[k].style.background="#ffc400";
 }
   petal[this.index].style.background="blue";
  B.style.background='rgba(255,255,255,'+arry[this.index]+')';  
@@ -116,7 +116,7 @@ for (var k = 0; k< petal.length; k ++){
 var flowercenter = document.getElementsByClassName("flower-center")[0];
 flowercenter.onclick=function(){
  for (var O = 0; O< petal.length; O ++){
- petal[O].style.background="red";
+ petal[O].style.background="#ffc400";
    B.style.background='#add8e6';  
    //turn background into original brightness after click on flower-center
  }
